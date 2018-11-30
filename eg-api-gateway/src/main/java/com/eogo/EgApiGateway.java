@@ -14,6 +14,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableDiscoveryClient
 @EnableZuulProxy
 public class EgApiGateway {
+    /**
+     * 网关也需要进行注册到注册中心
+     * @param args
+     */
     public static void main(String[] args) {
         SpringApplication.run(EgApiGateway.class);
     }
