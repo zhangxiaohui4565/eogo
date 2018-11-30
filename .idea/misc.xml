@@ -73,6 +73,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eg-api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/eg-registry/pom.xml" />
       </list>
     </option>
   </component>
