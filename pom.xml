@@ -12,8 +12,8 @@
         <module>eg-registry</module>
         <module>eg-api-gateway</module>
         <module>eg-item</module>
+        <module>eg-common</module>
     </modules>
-    <!--注意循环依赖-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
