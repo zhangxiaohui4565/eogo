@@ -12,5 +12,11 @@
     <groupId>com.eogo.item</groupId>
     <artifactId>eg-item-interface</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-core</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+    </dependencies>
 </project>
