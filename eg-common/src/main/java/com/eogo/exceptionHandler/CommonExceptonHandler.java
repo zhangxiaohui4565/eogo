@@ -3,8 +3,6 @@ package com.eogo.exceptionHandler;
 
 import com.eogo.egexception.EgException;
 import com.eogo.egexception.result.EgExceptionResult;
-import com.eogo.egexception.status.EgExceptionStatus;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
