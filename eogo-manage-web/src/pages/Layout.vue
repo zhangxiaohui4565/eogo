@@ -109,7 +109,7 @@
         dark: false,// 是否暗黑主题
         drawer: true,// 左侧导航是否隐藏
         miniVariant: false,// 左侧导航是否收起
-        title: '菜鸟乐园平台',// 顶部导航条名称,
+        title: '友购商城后台系统',//
         menuMap: {}
       }
     },
