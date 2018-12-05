@@ -14,6 +14,6 @@ axios.loadData = async function (url) {
   const resp = await axios.get(url);
   return resp.data;
 }
-
+//相当于在vue中添加了一个原型变量$http
 Vue.prototype.$http = axios;// 将axios添加到 Vue的原型，这样一切vue实例都可以使用该对象
 
