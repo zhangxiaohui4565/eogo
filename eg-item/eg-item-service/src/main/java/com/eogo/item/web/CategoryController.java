@@ -1,5 +1,7 @@
 package com.eogo.item.web;
 
+import com.eogo.egexception.EgException;
+import com.eogo.egexception.status.EgExceptionStatus;
 import com.eogo.item.service.CategoryService;
 import com.eogo.pojo.Category;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +30,6 @@ public class CategoryController {
     public ResponseEntity<List<Category>> queryByParentId(
             @RequestParam(value = "pid", defaultValue = "0") Long pid) {
         List<Category> list = this.categoryService.queryListByParent(pid);
-        if (list == null || list.size() < 1) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
         return ResponseEntity.ok(list);
     }
 }

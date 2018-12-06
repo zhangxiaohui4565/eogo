@@ -98,7 +98,7 @@
       }
     },
     methods: {
-      getDataFromServer() { // 从服务的加载数的方法。
+      getDataFromServer() { // 从服务的加载数的方法。查询方法
         // 发起请求
         this.$http.get("/item/brand/page", {
           params: {

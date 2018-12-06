@@ -1,5 +1,8 @@
 <template>
   <div>
+<!--header中的都是在页面显示的标题
+  items是后台返回的数据即brands
+-->
     <v-data-table
       :headers="headers"
       :items="brands"

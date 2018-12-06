@@ -1,4 +1,4 @@
-package com.eogo.exceptionHandler;
+package com.eogo.egexception.handler;
 
 
 import com.eogo.egexception.EgException;
