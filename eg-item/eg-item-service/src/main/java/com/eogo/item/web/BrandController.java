@@ -6,10 +6,9 @@ import com.eogo.pojo.Brand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("brand")
@@ -17,6 +16,7 @@ public class BrandController {
 
     @Autowired
     private BrandService brandService;
+
 
     /**
      *
@@ -39,5 +39,12 @@ public class BrandController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(result);
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> saveBrands (Brand brand ,@RequestParam("cids") List<Long> cids){
+        brandService.saveBrand(brand,cids);
+        //此处因为是新增无返回值，不需要使用body,build()即可。
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

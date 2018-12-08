@@ -11,6 +11,7 @@ import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
@@ -47,5 +48,23 @@ public class BrandServiceImpl implements BrandService {
         PageInfo<Brand> pageInfo = new PageInfo<>(lists);
         // 返回结果 pageResult为自己定义的分页包装类
         return new PageResult<>(pageInfo.getTotal(), lists);
+    }
+
+    @Override
+    @Transactional
+    public Integer saveBrand(Brand brand, List<Long> cids) {
+        //此处供选择的方法有insertSelective()---选择非空字段进行插入
+        int count = brandMapper.insert(brand);
+        if (count != 1) {
+            throw new EgException(EgExceptionStatus.RESOURCE_INSERT_ERROR);
+        }
+        //将关联信息新增到中间表
+        for (Long cid : cids) {
+            int result = brandMapper.insertCategoryBrand(cid, brand.getId());
+            if (result != 1) {
+                throw new EgException(EgExceptionStatus.RESOURCE_INSERT_ERROR);
+            }
+        }
+        return 1;
     }
 }

@@ -1,5 +1,7 @@
 server:
   port: 8084
+  tomcat:
+    uri-encoding: UTF-8
 spring:
   application:
     name: item-service
@@ -10,6 +12,12 @@ spring:
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
 
 eureka:
   client:
