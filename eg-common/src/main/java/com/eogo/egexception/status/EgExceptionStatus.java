@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public enum EgExceptionStatus {
-    PARAMS_CANNOT_BE_NULL(400,"参数不能为空,请检查参数"),RESOURCE_NOT_FOUND(404,"当前查询无数据")
+    PARAMS_CANNOT_BE_NULL(400,"参数不能为空,请检查参数"),
+    RESOURCE_NOT_FOUND(404,"当前查询无数据"),
+    RESOURCE_INSERT_ERROR(500,"新增数据失败，请联系管理员"),
     ;
     private int code ;
     private String message ;
