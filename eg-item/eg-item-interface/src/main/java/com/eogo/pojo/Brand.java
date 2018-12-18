@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 品牌信息
+ */
 @Table(name = "tb_brand")
 @Data
 public class Brand {

@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 商品分类信息
+ */
 @Table(name="tb_category")
 @Data
 public class Category {
