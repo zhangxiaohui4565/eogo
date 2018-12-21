@@ -13,6 +13,7 @@
         <module>eg-api-gateway</module>
         <module>eg-item</module>
         <module>eg-common</module>
+        <module>eg-swagger</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -32,3 +32,8 @@ eureka:
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql日志
+
+swagger:
+  title: "商品后台API"
+  basePackage: "com.eogo.item.web"
+

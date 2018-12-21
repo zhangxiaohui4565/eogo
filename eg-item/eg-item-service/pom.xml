@@ -72,6 +72,11 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${io.springfox.seagger.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.eogo.parent</groupId>
+            <artifactId>eg-swagger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
