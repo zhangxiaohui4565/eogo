@@ -31,4 +31,4 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
 mybatis:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql日志

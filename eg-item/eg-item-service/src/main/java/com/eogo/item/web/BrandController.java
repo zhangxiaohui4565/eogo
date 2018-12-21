@@ -3,6 +3,10 @@ package com.eogo.item.web;
 import com.eogo.item.service.BrandService;
 import com.eogo.page.PageResult;
 import com.eogo.pojo.Brand;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("brand")
+@Api(tags = "品牌信息的API")
 public class BrandController {
 
     @Autowired
@@ -28,6 +33,12 @@ public class BrandController {
      * @return
      */
     @GetMapping("page")
+    @ApiOperation(value = "根据关键字ley查询品牌信息",notes = "查询品牌信息")
+    @ApiImplicitParams({
+        @ApiImplicitParam(name = "key", value = "关键字", paramType = "query", required = false, dataType = "String"),
+        @ApiImplicitParam(name = "sortBy", value = "排序字段", paramType = "query", required = false, dataType = "String"),
+        @ApiImplicitParam(name = "desc",value = "是否倒序",paramType = "query",required = false,dataType = "Boolean")
+    })
     public ResponseEntity<PageResult<Brand>> queryBrandByPage(
             @RequestParam(value = "page", defaultValue = "1") Integer page,
             @RequestParam(value = "rows", defaultValue = "5") Integer rows,
