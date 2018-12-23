@@ -27,4 +27,13 @@ public class CategoryServiceImpl implements CategoryService {
         }
         return categories;
     }
+
+    @Override
+    public List<Category> queryByIds(List<Long> ids) {
+        List<Category> categories = categoryMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(categories)) {
+            throw new EgException(EgExceptionStatus.RESOURCE_NOT_FOUND);
+        }
+        return categories;
+    }
 }

@@ -1,10 +1,12 @@
 package com.eogo.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 @Table(name = "tb_spu")
@@ -41,5 +43,10 @@ public class Spu {
      */
     private Boolean valid ;
     private Date createTime;
+    @JsonIgnore
     private Date lastUpdateTime;
+    @Transient
+    private String cname;
+    @Transient
+    private String bname;
 }

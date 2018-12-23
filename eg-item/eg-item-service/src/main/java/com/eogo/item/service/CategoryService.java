@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface CategoryService {
     List<Category> queryListByParent(Long pid);
+    List<Category> queryByIds (List<Long> ids );
 }

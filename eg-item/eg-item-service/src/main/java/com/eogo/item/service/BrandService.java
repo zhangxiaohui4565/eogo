@@ -26,5 +26,5 @@ public interface BrandService {
      * @return
      */
     Integer saveBrand(Brand brand , List<Long> cids);
-
+    Brand queryById (Long id);
 }

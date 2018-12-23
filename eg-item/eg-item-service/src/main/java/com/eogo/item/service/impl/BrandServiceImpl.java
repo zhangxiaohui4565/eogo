@@ -67,4 +67,12 @@ public class BrandServiceImpl implements BrandService {
         }
         return 1;
     }
+    @Override
+    public Brand queryById (Long id){
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+        if (brand == null){
+            throw new EgException(EgExceptionStatus.RESOURCE_NOT_FOUND);
+        }
+        return  brand;
+    }
 }
