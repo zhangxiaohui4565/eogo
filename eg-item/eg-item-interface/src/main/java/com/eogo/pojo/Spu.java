@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "tb_spu")
 @Data
@@ -49,4 +50,14 @@ public class Spu {
     private String cname;
     @Transient
     private String bname;
+    /**
+     * 商品特有属性集合
+     */
+    @Transient
+    private List<Sku> skus;
+    /**
+     * 商品共有属性
+     */
+    @Transient
+    private SpuDetail spuDetail;
 }

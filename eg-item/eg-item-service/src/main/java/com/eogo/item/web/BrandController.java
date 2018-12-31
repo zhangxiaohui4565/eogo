@@ -58,4 +58,12 @@ public class BrandController {
         //此处因为是新增无返回值，不需要使用body,build()即可。
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("/cid/{cid}")
+    public ResponseEntity<List<Brand>> getBrandsByCid (@PathVariable Long cid){
+        List<Brand> brands = brandService.getBrandsByCid(cid);
+        return ResponseEntity.ok(brands);
+    }
+
+
 }

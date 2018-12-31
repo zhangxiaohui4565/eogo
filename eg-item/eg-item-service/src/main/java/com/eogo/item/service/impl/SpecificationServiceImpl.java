@@ -30,9 +30,11 @@ public class SpecificationServiceImpl implements SpecificationService {
         return speGroups;
     }
     @Override
-    public List<SpecParam> querySpecParamByGid(Long groupId){
+    public List<SpecParam> querySpecParamByGid(Long groupId, Long cid, Boolean searching){
         SpecParam specParam = new SpecParam();
         specParam.setGroupId(groupId);
+        specParam.setCid(cid);
+        specParam.setSearching(searching);
         List<SpecParam> results = specParamMapper.select(specParam);
         if (CollectionUtils.isEmpty(results)){
             throw new EgException(EgExceptionStatus.RESOURCE_NOT_FOUND);

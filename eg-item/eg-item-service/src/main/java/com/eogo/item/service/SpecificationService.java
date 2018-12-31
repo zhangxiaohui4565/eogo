@@ -12,7 +12,9 @@ public interface SpecificationService {
     /**
      * 根据商品规格组查询商品规格信息
      * @param groupId
+     * @param cid
+     * @param searching
      * @return
      */
-    List<SpecParam> querySpecParamByGid(Long groupId);
+    List<SpecParam> querySpecParamByGid(Long groupId, Long cid, Boolean searching);
 }

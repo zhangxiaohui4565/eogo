@@ -75,4 +75,13 @@ public class BrandServiceImpl implements BrandService {
         }
         return  brand;
     }
+
+    @Override
+    public List<Brand> getBrandsByCid(Long cid) {
+        List<Brand> brands = brandMapper.getBrandsByCid(cid);
+        if (CollectionUtils.isEmpty(brands)){
+            throw  new EgException(EgExceptionStatus.RESOURCE_NOT_FOUND);
+        }
+        return brands;
+    }
 }
