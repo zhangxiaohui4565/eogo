@@ -136,7 +136,11 @@ public class GoodsServicedsServiceImpl implements GoodsService {
     }
 
     @Override
+    @Transactional
     public void updateGoods(Spu spu) {
+        if(spu.getId() == null){
+            throw  new EgException(EgExceptionStatus.PARAMS_CANNOT_BE_NULL);
+        }
         /**
          *  删除sku和stock
          */
